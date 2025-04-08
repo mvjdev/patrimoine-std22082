@@ -1,6 +1,7 @@
 package school.hei.patrimoine.cas;
 
 import school.hei.patrimoine.cas.pro3.BakoCas;
+import school.hei.patrimoine.cas.pro3.TianaCas;
 import school.hei.patrimoine.modele.Personne;
 
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import static school.hei.patrimoine.modele.Argent.ariary;
 public class CasSetSupplier implements Supplier<CasSet> {
   @Override
   public CasSet get() {
+    /*
     BakoCas bakoCas = new BakoCas(
             LocalDate.of(2025, Month.APRIL, 8),
             LocalDate.of(2025, Month.DECEMBER, 31),
@@ -21,6 +23,15 @@ public class CasSetSupplier implements Supplier<CasSet> {
     return new CasSet(
             Set.of(bakoCas),
             ariary(14_711_657)
+    );
+    */
+    TianaCas tianaCas = new TianaCas(
+            LocalDate.of(2025, Month.APRIL, 8),
+            LocalDate.of(2026, Month.MARCH, 31),
+            Map.of(new Personne("TianaCas"), 1.));
+    return new CasSet(
+            Set.of(tianaCas),
+            ariary(-86_219_178)
     );
   }
 }
